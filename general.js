@@ -26,3 +26,10 @@ for (let i = 0; i < 20; i++) {
     vernyomas: randomVerNyomas()
   });
 }
+
+const jsonSzoveg = JSON.stringify(lista, null, 2);
+
+const filePath = path.join("public", "test.json");
+fs.writeFileSync(filePath, jsonSzoveg, "utf-8");
+
+console.log("✅ test.json sikeresen létrehozva a public mappában");
